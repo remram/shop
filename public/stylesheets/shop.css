@@ -19,12 +19,35 @@
 /* Styles for products/index */
 
 .prod-url:link {
-		border: #000000;
+		border: 0;
 }
 
 .prod-url:hover,
 .prod-url:visited {
 		border: #4444AA;
+}
+
+ul.action-list {
+        list-style: none;        
+}
+
+ul.action-list li {
+        float: left;
+        margin-left: .5em;
+}
+
+ul.action-list li a:link {
+	color: #555;
+	border: 1px solid #555;
+	padding: 0 .5em 0 .5em;
+	text-decoration: none;
+}
+
+ul.action-list li a:hover,
+ul.action-list li a:visited {
+	background-color: #555;
+	color: #fff;
+	border: 1px solid #000000 ;
 }
 
 #product_list table {
