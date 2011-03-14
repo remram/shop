@@ -18,6 +18,15 @@
 
 /* Styles for products/index */
 
+.prod-url:link {
+		border: #000000;
+}
+
+.prod-url:hover,
+.prod-url:visited {
+		border: #4444AA;
+}
+
 #product_list table {
         border-collapse: collapse;
 }
@@ -28,8 +37,11 @@
 }
 
 #product_list .list_image {
-  width:        60px;
-  height:       70px;
+  width:        100px;
+  max-width:    150px;
+  height:       100px;
+  max-height:   150px;
+  border:       1px solid #000;
 }
 
 #product_list .list_description {
@@ -57,11 +69,13 @@
 }
 
 #product_list .list_line_even {
-  background:   #e0f8f8;
+  background:   #eee;
+  border:       1px solid #224444;
 }
 
 #product_list .list_line_odd {
-  background:   #f8b0f8;
+  background:   #bbb;
+  border:       1px solid #000000;
 }
 
 /* An entry in the store catalog */
