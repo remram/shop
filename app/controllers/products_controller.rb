@@ -3,7 +3,8 @@ class ProductsController < ApplicationController
   # GET /products.xml
   def index
     @products = Product.all
-
+    @shopUrl = request.env["HTTP_HOST"]
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @products }
@@ -14,6 +15,7 @@ class ProductsController < ApplicationController
   # GET /products/1.xml
   def show
     @product = Product.find(params[:id])
+    @shopUrl = request.env["HTTP_HOST"]
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,7 +27,8 @@ class ProductsController < ApplicationController
   # GET /products/new.xml
   def new
     @product = Product.new
-
+    @shopUrl = request.env["HTTP_HOST"]
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @product }
@@ -35,6 +38,7 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
+    @shopUrl = request.env["HTTP_HOST"]
   end
 
   # POST /products

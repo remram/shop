@@ -19,6 +19,8 @@ class CartsController < ApplicationController
     @cart.line_items.each do |item|
     	@totalPrice += item.product.price
     end
+    
+    @shopUrl = request.env["HTTP_HOST"]
 
     respond_to do |format|
       format.html # show.html.erb

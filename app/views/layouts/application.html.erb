@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pragprog Books Online Store</title>
+  <title>MobiLeTel Online Store</title>
 <!-- START:stylesheet -->
   <%= stylesheet_link_tag "scaffold" %>
   <%= stylesheet_link_tag "shop", :media => "all" %><!-- <label id="code.slt"/> -->
@@ -13,13 +13,13 @@
 <body id="store">
   <div id="banner">
     <%= image_tag("logo.png") %>
-    <%= @page_title || "Pragmatic Bookshelf" %><!-- <label id="code.shop.e.title"/> -->
+    <%= @page_title || "MobiLeTel Shop" %><!-- <label id="code.shop.e.title"/> -->
   </div>
   <div id="columns">
     <div id="side">
       <a href="/">Home</a><br />
-      <a href="./products">Administration</a><br />
-      <a href="./line_items">Cart</a><br />
+      <a href="http://<%= @shopUrl %>/line_items">Cart</a><br />
+      <a href="http://<%= @shopUrl %>/products">Administration</a><br />
     </div>
     <div id="main">
       <%= yield %><!-- <label id="code.shop.e.include"/> -->

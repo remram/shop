@@ -3,7 +3,7 @@ class LineItemsController < ApplicationController
   # GET /line_items.xml
   def index
     @line_items = LineItem.all
-
+    @shopUrl = request.env["HTTP_HOST"]
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @line_items }
@@ -14,7 +14,7 @@ class LineItemsController < ApplicationController
   # GET /line_items/1.xml
   def show
     @line_item = LineItem.find(params[:id])
-
+    @shopUrl = request.env["HTTP_HOST"]
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @line_item }
@@ -25,7 +25,7 @@ class LineItemsController < ApplicationController
   # GET /line_items/new.xml
   def new
     @line_item = LineItem.new
-
+    @shopUrl = request.env["HTTP_HOST"]
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @line_item }
@@ -35,12 +35,12 @@ class LineItemsController < ApplicationController
   # GET /line_items/1/edit
   def edit
     @line_item = LineItem.find(params[:id])
+    @shopUrl = request.env["HTTP_HOST"]
   end
 
   # POST /line_items
   # POST /line_items.xml
   def create
-  	
   	@cart = current_cart
 	product = Product.find(params[:product_id])
 	@line_item = @cart.line_items.build(:product => product)
