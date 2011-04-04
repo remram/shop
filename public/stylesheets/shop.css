@@ -153,6 +153,12 @@ ul.action-list li a:visited {
   margin-right: 2em;
 }
 
+.price {
+  color: #44a;
+  font-weight: bold;
+  margin-right: 2em;
+}
+
 
 #banner {
 background: #9c9;

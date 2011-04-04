@@ -1,15 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-
-
-
 <h2>Your Pragmatic Cart</h2>
 <ul>
 	<% @cart.line_items.each do |item| %>
 	<li>
 		<%= item.product.title %>
 		<%= link_to 'Edit', edit_cart_path(@cart) %> |
-		<%= link_to 'Back', carts_path %>
+		<%= link_to 'Back', carts_path %> |
+		<%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %>
 	</li>
 	<% end %>
 </ul>
+
+<p>
+	<span class="price">Total: <%= number_to_currency(@totalPrice) %></span>
+</p>

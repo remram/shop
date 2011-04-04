@@ -14,6 +14,11 @@ class CartsController < ApplicationController
   # GET /carts/1.xml
   def show
     @cart = Cart.find(params[:id])
+    
+    @totalPrice = 0
+    @cart.line_items.each do |item|
+    	@totalPrice += item.product.price
+    end
 
     respond_to do |format|
       format.html # show.html.erb

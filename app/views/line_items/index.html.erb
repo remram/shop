@@ -9,7 +9,9 @@
     <th></th>
   </tr>
 
+<% @totalPrice = 0 %>
 <% @line_items.each do |line_item| %>
+  <% @totalPrice += line_item.product.price %>
   <tr>
     <td><%= line_item.product_id %></td>
     <td><%= line_item.cart_id %></td>
@@ -19,6 +21,10 @@
   </tr>
 <% end %>
 </table>
+
+<p>
+	<span class="price">Total: <%= number_to_currency(@totalPrice) %></span>
+</p>
 
 <br />
 
