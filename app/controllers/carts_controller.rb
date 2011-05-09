@@ -17,7 +17,7 @@ class CartsController < ApplicationController
     
     @totalPrice = 0
     @cart.line_items.each do |item|
-    	@totalPrice += item.product.price
+    	@totalPrice += item.product.price * item.quantity
     end
     
     @shopUrl = request.env["HTTP_HOST"]
