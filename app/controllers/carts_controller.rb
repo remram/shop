@@ -15,10 +15,10 @@ class CartsController < ApplicationController
   def show
     @cart = Cart.find(params[:id])
     
-    @totalPrice = 0
-    @cart.line_items.each do |item|
-    	@totalPrice += item.product.price * item.quantity
-    end
+#    @totalPrice = 0
+#    @cart.line_items.each do |item|
+#    	@totalPrice += item.product.price * item.quantity
+#    end
     
     @shopUrl = request.env["HTTP_HOST"]
 

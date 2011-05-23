@@ -16,7 +16,10 @@
     <%= @page_title || "MobiLeTel Shop" %><!-- <label id="code.shop.e.title"/> -->
   </div>
   <div id="columns">
-    <div id="side">
+    <div id="side">    	
+	    <div id="cart" >
+	    	<%= render @cart %>
+	    </div>
       <a href="/">Home</a><br />
       <a href="http://<%= @shopUrl %>/line_items">Cart</a><br />
       <a href="http://<%= @shopUrl %>/products">Administration</a><br />
